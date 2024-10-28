@@ -7,6 +7,7 @@ class DynHeader extends HTMLElement {
           <nav>
               <ul>
                   <li><a href="/index.html">Home</a></li>
+                  <li><a href="/calendar.html">Calendar</a></li>
               </ul>
           </nav>
           </header>
