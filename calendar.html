@@ -4,11 +4,39 @@
     <title>OSCA Hack Club Calendar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #a633d6;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
     <dyn-header></dyn-header>
-    <iframe src="https://outlook.office365.com/owa/calendar/f0005c92ad71415c9027de0d6410073a@ormistonsandwell.org.uk/eac05b96073f4324bc2a9b382f5f9a9b8437742454327547749/calendar.html" width="100%" style="height: 80vh;"></iframe>
+    <div id="spinner" class="spinner"></div>
+    <iframe src="https://teamup.com/ksdboqutzm352tf39d?showProfileAndInfo=0&showSidepanel=1&disableSidepanel=1&showViewHeader=1&showAgendaDetails=1&showDateControls=1" style="width: 100%; height: 80vh; border: 1px solid #cccccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" loading="lazy" frameborder="0"></iframe>
     <dyn-footer></dyn-footer>
     <script src="/headerfooter.js"></script>
+    <script>
+      const iframe = document.querySelector('iframe');
+      const spinner = document.getElementById('spinner');
+
+      iframe.onload = function() {
+        spinner.style.display = 'none';
+      };
+    </script>
   </body>
 </html>

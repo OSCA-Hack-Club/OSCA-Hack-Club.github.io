@@ -183,8 +183,27 @@ p {
 
 iframe {
   width: 100%;
-  height: 37.5rem;
-  border: none;
+  height: 80vh;
+  border: 1px solid #cccccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #a633d6;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @media (max-width: 768px) {
@@ -204,6 +223,9 @@ iframe {
   li a {
     font-size: 0.875rem;
   }
+  iframe {
+    height: 60vh;
+  }
 }
 
 @media (max-width: 480px) {
@@ -222,5 +244,8 @@ iframe {
   }
   li a {
     font-size: 0.75rem;
+  }
+  iframe {
+    height: 50vh;
   }
 }
