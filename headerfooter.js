@@ -1,30 +1,32 @@
 class DynHeader extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-          <link rel="stylesheet" href="/styles.css">
-          <header>
-          <h1>OSCA Hack Club</h1>
-          <nav>
-              <ul>
-                  <li><a href="/index.html">Home</a></li>
-                  <li><a href="/calendar.html">Calendar</a></li>
-              </ul>
-          </nav>
-          </header>
-          `;
+  async connectedCallback() {
+    const response = await fetch('/header.html');
+    if (response.ok) {
+      const headerContent = await response.text();
+      this.innerHTML = headerContent;
+      this.querySelectorAll('img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+    } else {
+      console.error('Failed to load header:', response.statusText);
     }
   }
-  
-  class DynFooter extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-          <link rel="stylesheet" href="/styles.css">
-          <footer>
-              <p>&copy; 2024 Ormiston Sandwell Community Academy. All rights reserved.</p>
-          </footer>
-          `;
+}
+
+class DynFooter extends HTMLElement {
+  async connectedCallback() {
+    const response = await fetch('/footer.html');
+    if (response.ok) {
+      const footerContent = await response.text();
+      this.innerHTML = footerContent;
+      this.querySelectorAll('img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+    } else {
+      console.error('Failed to load footer:', response.statusText);
     }
   }
-  
-  customElements.define("dyn-header", DynHeader);
-  customElements.define("dyn-footer", DynFooter);
+}
+
+customElements.define("dyn-header", DynHeader);
+customElements.define("dyn-footer", DynFooter);
