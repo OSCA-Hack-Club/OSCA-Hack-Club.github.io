@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>OSCA Hack Club Calendar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
       .spinner {
@@ -19,8 +19,12 @@
       }
 
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
@@ -30,19 +34,24 @@
     </div>
     <dyn-header></dyn-header>
     <div id="spinner" class="spinner"></div>
-    <iframe src="https://teamup.com/ksdboqutzm352tf39d?showHeader=0&showProfileAndInfo=0&showSidepanel=1&disableSidepanel=1&showTitle=0&showViewHeader=1&showAgendaDetails=1&showDateControls=1" style="width: 100%; height: 80vh; border: 1px solid #cccccc" loading="lazy" frameborder="0"></iframe>
+    <iframe
+      src="https://teamup.com/ksdboqutzm352tf39d?showHeader=0&showProfileAndInfo=0&showSidepanel=1&disableSidepanel=1&showTitle=0&showViewHeader=1&showAgendaDetails=1&showDateControls=1"
+      style="width: 100%; height: 80vh; border: 1px solid #cccccc"
+      loading="lazy"
+      frameborder="0"
+    ></iframe>
     <dyn-footer></dyn-footer>
     <script src="/headerfooter.js" defer></script>
     <script>
-      const iframe = document.querySelector('iframe');
-      const spinner = document.getElementById('spinner');
+      const iframe = document.querySelector("iframe");
+      const spinner = document.getElementById("spinner");
 
-      iframe.onload = function() {
-        spinner.style.display = 'none';
+      iframe.onload = function () {
+        spinner.style.display = "none";
       };
 
-      window.addEventListener('load', function() {
-        document.querySelector('.loading-overlay').style.display = 'none';
+      window.addEventListener("load", function () {
+        document.querySelector(".loading-overlay").style.display = "none";
       });
     </script>
   </body>
