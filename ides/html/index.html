@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Editor | OSCA Hack Club</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div id="logocontainer">
+        <img id="logo" src="/img/Logo.png" width="100px" />
+      </div>
+      <div id="buttoncontainer">
+        <button onclick="buttonclick()"><b>RUN</b></button>
+        <button id="downloadButton"><b>DOWNLOAD</b></button>
+      </div>
+    </header>
+    <main>
+      <div id="editor"></div>
+      <iframe id="iframe"> </iframe>
+    </main>
+    <script
+      src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
